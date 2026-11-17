@@ -56,9 +56,7 @@ void next_gen(int field[HEIGHT][WIDTH]) {
         for (int x = 0; x < WIDTH; x++) {
             int n = count_neighbors(field, y, x);
 
-            new_field[y][x] =
-                (field[y][x] && (n == 2 || n == 3)) ||
-                (!field[y][x] && n == 3);
+            new_field[y][x] = (field[y][x] && (n == 2 || n == 3)) || (!field[y][x] && n == 3);
         }
     }
 
@@ -132,9 +130,7 @@ void draw(int field[HEIGHT][WIDTH], int delay) {
         }
     }
 
-    mvprintw(HEIGHT + 1, 0,
-             "Speed: %d ms | A-faster Z-slower Space-exit", delay);
-
+    mvprintw(HEIGHT + 1, 0,"Speed: %d ms | A-faster Z-slower Space-exit", delay);
     refresh();
 }
 
